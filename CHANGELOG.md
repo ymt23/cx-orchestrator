@@ -4,30 +4,24 @@
 
 Released: 2026-06-01
 
-Public repository readiness updates.
+Adds local setup diagnostics for checking a local CX Orchestrator plugin installation.
 
 ### Added
 
-- Local marketplace setup check script and fixture tests.
-- CI status badge in README files.
-- GitHub issue templates for bug reports, feature requests, and maintainer tasks.
-- Pull request template for compatibility, safety, and validation review.
-- Post-release roadmap draft for `0.1.6+` issue planning.
-- Maintainer branch and commit policy for public OSS work.
-- MIT license.
-- Contributing guide.
-- Security policy.
-- `.gitignore` for local runtime artifacts and editor/package-manager noise.
-- Public GitHub repository metadata for `ymt23/cx-orchestrator`.
-- Public disclaimer, requirements, known limitations, and roadmap ideas in README.
+- `node scripts/check-local-setup.mjs` to diagnose local marketplace configuration without modifying user config files.
+- Fixture tests for healthy and broken setup cases.
+- User-facing documentation for local setup diagnostics.
 
 ### Changed
 
-- Plugin and controller metadata now declare MIT licensing.
-- Plugin and controller author metadata now identify `ymt23`.
-- Public docs now use generic local paths instead of maintainer-specific absolute paths.
-- Maintainer-facing policy and skill docs no longer hard-code a personal local checkout path.
-- `AGENTS.md` is now English-first for OSS publication.
+- CI now runs portable Node.js validation on `ubuntu-latest`.
+
+### Compatibility
+
+- Public MCP tools and task result shapes are unchanged.
+- Human approval before CX2 dispatch remains mandatory.
+- CX2 approval requests remain routed to CX1/Human.
+- Full task log retention is unchanged.
 
 ## 0.1.5
 
