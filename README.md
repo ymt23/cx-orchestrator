@@ -1,16 +1,22 @@
 # CX Orchestrator
 
-[Japanese README](README.ja.md)
+<div align="center">
+
+<img src="assets/cx-orchestrator-logo.png" alt="CX Orchestrator logo mark" width="240">
 
 [![CI](https://github.com/ymt23/cx-orchestrator/actions/workflows/ci.yml/badge.svg)](https://github.com/ymt23/cx-orchestrator/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/ymt23/cx-orchestrator)](https://github.com/ymt23/cx-orchestrator/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Node.js >=18](https://img.shields.io/badge/Node.js-%3E%3D18-339933)](https://nodejs.org/)
+[![Requires Codex App and CLI](https://img.shields.io/badge/requires-Codex%20App%20%2B%20CLI-111827)](README.md)
+
+[![Japanese README](https://img.shields.io/badge/README-Japanese-0f766e)](README.ja.md)
 
 CX Orchestrator is a home-local Codex plugin that lets a CX1 CodexApp thread coordinate a controlled CX2 CodexCLI worker through MCP.
 
 This is not an official OpenAI project.
 
-Current version: `0.1.6`
-
-Maintainer: [ymt23](https://github.com/ymt23)
+</div>
 
 ## Status
 
