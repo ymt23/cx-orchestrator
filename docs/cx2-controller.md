@@ -59,7 +59,7 @@ Current defaults:
 
 ```json
 {
-  "pluginVersion": "0.1.5",
+  "pluginVersion": "0.1.6",
   "allowedCodexBinary": "/opt/homebrew/bin/codex",
   "defaultLogRoot": "~/.codex/cx-orchestrator/tasks",
   "defaultSandbox": "workspace-write",

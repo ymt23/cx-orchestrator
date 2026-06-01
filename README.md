@@ -8,7 +8,7 @@ CX Orchestrator is a home-local Codex plugin that lets a CX1 CodexApp thread coo
 
 This is not an official OpenAI project.
 
-Current version: `0.1.5`
+Current version: `0.1.6`
 
 Maintainer: [ymt23](https://github.com/ymt23)
 
@@ -152,7 +152,7 @@ These are possible future directions, not committed release promises.
 
 ## Versioning
 
-The plugin manifest version and controller version are currently `0.1.5`.
+The plugin manifest version and controller version are currently `0.1.6`.
 
 Update `CHANGELOG.md` whenever behavior, tools, config, schemas, or operating policy changes.
 

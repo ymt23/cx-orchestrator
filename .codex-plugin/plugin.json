@@ -1,6 +1,6 @@
 {
   "name": "cx-orchestrator",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Orchestrate a CX1 CodexApp thread with a controlled CX2 CodexCLI worker through MCP.",
   "author": {
     "name": "ymt23",
