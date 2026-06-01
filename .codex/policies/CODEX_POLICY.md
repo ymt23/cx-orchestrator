@@ -38,6 +38,28 @@ For implementation or maintenance, also use:
 - Maintain Japanese translations as separate files when useful, for example `README.ja.md`.
 - Translate Human's Japanese intent into clear English public documentation without changing the approved scope or meaning.
 
+## Branch and Commit Policy
+
+- Treat `main` as the always-publishable branch.
+- Do not commit directly to `main` for normal maintenance work.
+- Before committing, use a short English topic branch unless the Human explicitly instructs otherwise.
+- Branch prefixes:
+  - `docs/`: documentation, roadmap, templates, and public repository maintenance.
+  - `chore/`: release preparation, metadata, and non-runtime maintenance.
+  - `feat/`: additive runtime behavior.
+  - `fix/`: bug fixes.
+  - `test/`: test-only changes.
+- Keep each branch scoped to one logical change.
+- Use pull requests for compatibility changes, approval gate changes, approval request routing changes, full-log retention changes, runtime behavior changes, and release preparation.
+- Do not create commits unless the Human explicitly asks.
+- For this public OSS repository, commit messages must be English Conventional Commits.
+- Example commit messages:
+  - `docs: add post-release maintenance templates`
+  - `feat: add local marketplace setup check`
+  - `test: cover approval request handling`
+  - `fix: preserve retry status after tooling failure`
+  - `chore: prepare v0.1.6 release`
+
 ## Compatibility
 
 The public MCP interface is the compatibility boundary:

@@ -1,0 +1,44 @@
+name: Feature request
+description: Propose a compatible enhancement.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What maintainer workflow or limitation should this address?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed approach
+      description: Describe the smallest useful change.
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility and safety
+      description: Explain how this preserves approval gates, full logging, and public MCP compatibility.
+      placeholder: |
+        - Human approval before CX2 dispatch remains mandatory.
+        - CX2 approval requests remain routed to CX1/Human.
+        - Full logs remain retained.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Boundary checks
+      options:
+        - label: This does not require modifying CodexApp or CodexCLI.
+          required: true
+        - label: This does not introduce automatic shell, patch, or tool approval.
+          required: true

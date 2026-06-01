@@ -1,0 +1,69 @@
+name: Bug report
+description: Report a reproducible problem in CX Orchestrator.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Do not paste secrets, private repository content, or raw task logs into a public issue.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What went wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: List the smallest sequence that reproduces the issue.
+      placeholder: |
+        1. Enable the plugin...
+        2. Prepare a CX2 task...
+        3. Start or wait for the task...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: CX Orchestrator version
+      placeholder: "0.1.5"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "macOS version, Node.js version, CodexCLI version"
+  - type: textarea
+    id: validation
+    attributes:
+      label: Verification commands
+      description: Paste relevant command names and minimal failure context. Avoid full logs.
+      placeholder: |
+        node --check mcp/cx2-controller/src/server.mjs
+        node mcp/cx2-controller/test/smoke.mjs
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety checks
+      options:
+        - label: I did not include secrets, private repository content, or raw task logs.
+          required: true
+        - label: This report does not request automatic CX2 approval or bypassing the Human approval gate.
+          required: true

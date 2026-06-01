@@ -6,6 +6,11 @@ Public repository readiness updates.
 
 ### Added
 
+- CI status badge in README files.
+- GitHub issue templates for bug reports, feature requests, and maintainer tasks.
+- Pull request template for compatibility, safety, and validation review.
+- Post-release roadmap draft for `0.1.6+` issue planning.
+- Maintainer branch and commit policy for public OSS work.
 - MIT license.
 - Contributing guide.
 - Security policy.

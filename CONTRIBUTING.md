@@ -23,6 +23,28 @@ Use English for public project artifacts:
 
 Japanese translations may be added as separate files, such as `README.ja.md`.
 
+## Branches and Commits
+
+Maintain `main` as the publishable branch. Use short English topic branches for normal work:
+
+- `docs/...` for documentation, roadmap, templates, and public repository maintenance.
+- `chore/...` for release preparation, metadata, and non-runtime maintenance.
+- `feat/...` for additive runtime behavior.
+- `fix/...` for bug fixes.
+- `test/...` for test-only changes.
+
+Keep one branch scoped to one logical change. Use pull requests for compatibility changes, approval gate changes, approval request routing changes, full-log retention changes, runtime behavior changes, and release preparation.
+
+Use English Conventional Commits:
+
+```text
+docs: add post-release maintenance templates
+feat: add local marketplace setup check
+test: cover approval request handling
+fix: preserve retry status after tooling failure
+chore: prepare v0.1.6 release
+```
+
 ## Local Verification
 
 Run from the repository root:
