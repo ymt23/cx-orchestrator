@@ -35,6 +35,9 @@ jobs:
       - name: Run runtime settings test
         run: node mcp/cx2-controller/test/model-settings.mjs
 
+      - name: Run setup check test
+        run: node scripts/test-check-local-setup.mjs
+
       - name: Validate JSON files
         run: |
           node -e 'for (const f of [".codex-plugin/plugin.json",".mcp.json","mcp/cx2-controller/config/defaults.json","mcp/cx2-controller/package.json","mcp/cx2-controller/schemas/task.schema.json","mcp/cx2-controller/schemas/result.schema.json","mcp/cx2-controller/schemas/approval.schema.json"]) JSON.parse(require("fs").readFileSync(f,"utf8")); console.log("json ok")'

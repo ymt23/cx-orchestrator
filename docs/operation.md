@@ -92,6 +92,14 @@ After changing marketplace or plugin config, fully restart CodexApp and open a n
 
 The repository is designed to run from a local marketplace checkout. Do not place runtime task logs inside this repository; the default log root is under `~/.codex`.
 
+To check the local setup without modifying Codex config or marketplace files, run from the plugin root:
+
+```sh
+node scripts/check-local-setup.mjs
+```
+
+The setup check reads the documented local marketplace shape and reports `PASS`, `WARN`, and `FAIL` lines. It exits with `0` when the required checks pass and `1` when setup problems are found.
+
 ## Runtime Logs
 
 Default log root:
@@ -151,6 +159,12 @@ The output should include the `CX Orchestrator` plugin and `cx-orchestrator:cx1-
 ## Troubleshooting
 
 ### `@cx-orchestrator` Is Not Found
+
+Run:
+
+```sh
+node scripts/check-local-setup.mjs
+```
 
 Check:
 

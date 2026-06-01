@@ -6,6 +6,7 @@ Public repository readiness updates.
 
 ### Added
 
+- Local marketplace setup check script and fixture tests.
 - CI status badge in README files.
 - GitHub issue templates for bug reports, feature requests, and maintainer tasks.
 - Pull request template for compatibility, safety, and validation review.
