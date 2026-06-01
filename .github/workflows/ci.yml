@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: macos-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Check controller syntax
+        run: node --check mcp/cx2-controller/src/server.mjs
+
+      - name: Run smoke test
+        run: node mcp/cx2-controller/test/smoke.mjs
+
+      - name: Run wait test
+        run: node mcp/cx2-controller/test/wait.mjs
+
+      - name: Run runtime settings test
+        run: node mcp/cx2-controller/test/model-settings.mjs
+
+      - name: Validate JSON files
+        run: |
+          node -e 'for (const f of [".codex-plugin/plugin.json",".mcp.json","mcp/cx2-controller/config/defaults.json","mcp/cx2-controller/package.json","mcp/cx2-controller/schemas/task.schema.json","mcp/cx2-controller/schemas/result.schema.json","mcp/cx2-controller/schemas/approval.schema.json"]) JSON.parse(require("fs").readFileSync(f,"utf8")); console.log("json ok")'
