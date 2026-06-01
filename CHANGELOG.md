@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased
+## 0.1.6
+
+Released: 2026-06-01
 
 Public repository readiness updates.
 

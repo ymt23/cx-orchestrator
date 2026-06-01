@@ -1,6 +1,6 @@
 {
   "name": "@local/cx2-controller-mcp",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "MCP controller for running Human-approved CodexCLI CX2 tasks from CX Orchestrator.",
   "license": "MIT",
   "author": {
