@@ -12,7 +12,7 @@ on:
 jobs:
   validate:
     name: Validate
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Check out repository
