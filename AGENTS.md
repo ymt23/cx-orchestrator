@@ -33,6 +33,20 @@ This repository keeps the source of truth for plugin implementation, operation, 
 - When the Human provides requirements in Japanese, CX should preserve the meaning and produce English public artifacts as needed.
 - If a Japanese-only note is useful for local operation, keep it clearly separated from the English public artifact.
 
+## Branch and Commit Policy
+
+- `main` must stay publishable.
+- Do not commit directly to `main` for normal maintenance work.
+- Use a short English topic branch for changes, for example `docs/post-release-maintenance`, `feat/setup-check`, `test/approval-handling`, or `fix/retry-status-handling`.
+- Keep one branch scoped to one logical change.
+- Use `docs/` or `chore/` branches for repository maintenance, documentation, templates, and release preparation.
+- Use `feat/` or `fix/` branches for runtime behavior changes.
+- Use `test/` branches for test-only changes.
+- Changes that affect compatibility, approval gates, approval routing, logging, or runtime behavior should go through a pull request, even for maintainer-owned work.
+- Release tags must point only to validated `main` commits.
+- Commit only when the Human explicitly asks.
+- Public commit messages must be English Conventional Commits, for example `docs: add post-release maintenance templates`.
+
 ## Project Boundaries
 
 ### In Scope

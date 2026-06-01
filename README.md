@@ -2,6 +2,8 @@
 
 [Japanese README](README.ja.md)
 
+[![CI](https://github.com/ymt23/cx-orchestrator/actions/workflows/ci.yml/badge.svg)](https://github.com/ymt23/cx-orchestrator/actions/workflows/ci.yml)
+
 CX Orchestrator is a home-local Codex plugin that lets a CX1 CodexApp thread coordinate a controlled CX2 CodexCLI worker through MCP.
 
 This is not an official OpenAI project.
@@ -132,7 +134,7 @@ The marketplace root should contain this repository at `plugins/cx-orchestrator`
 
 These are possible future directions, not committed release promises.
 
-- Add GitHub Actions for syntax checks, JSON validation, and controller tests.
+- Track post-release work in [docs/roadmap.md](docs/roadmap.md) and GitHub Issues.
 - Add a safer installation check or setup script for local marketplace configuration.
 - Add more tests around approval request handling and failure recovery.
 - Implement a documented retry loop for `max_retries`.

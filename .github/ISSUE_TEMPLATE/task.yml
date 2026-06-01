@@ -1,0 +1,45 @@
+name: Maintainer task
+description: Track documentation, test, release, or maintenance work.
+title: "[Task]: "
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What should be true when this task is complete?
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: List the files, docs, tools, or behavior expected to change.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Use checkboxes for verifiable outcomes.
+      placeholder: |
+        - [ ] Documentation updated.
+        - [ ] Tests added or updated.
+        - [ ] Validation commands pass.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation plan
+      description: Commands or manual checks expected for this task.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety constraints
+      options:
+        - label: Preserve the Human approval gate.
+          required: true
+        - label: Preserve CX2 approval routing through CX1/Human.
+          required: true
+        - label: Preserve full-log retention.
+          required: true

@@ -8,6 +8,7 @@ This directory is the project-local knowledge base for maintaining and operating
 - [operation.md](operation.md): how to use the plugin from CodexApp and how to inspect logs.
 - [cx1-policy.md](cx1-policy.md): CX1 behavior, approval gate, Human interaction policy.
 - [cx2-controller.md](cx2-controller.md): MCP tools, statuses, logs, config, validation.
+- [roadmap.md](roadmap.md): post-release backlog candidates and issue drafts.
 
 ## Project-Level Files
 
