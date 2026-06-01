@@ -156,6 +156,8 @@ Check whether Codex prompt loading sees the plugin:
 
 The output should include the `CX Orchestrator` plugin and `cx-orchestrator:cx1-orchestrator` skill.
 
+GitHub Actions runs portable Node.js checks on Ubuntu. macOS, CodexApp, and real CodexCLI integration remain manual verification paths. Reconsider a separate macOS workflow if future CLI integration tests need the real macOS runtime.
+
 ## Troubleshooting
 
 ### `@cx-orchestrator` Is Not Found
