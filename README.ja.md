@@ -101,6 +101,7 @@ node --check mcp/cx2-controller/src/server.mjs
 node mcp/cx2-controller/test/smoke.mjs
 node mcp/cx2-controller/test/wait.mjs
 node mcp/cx2-controller/test/model-settings.mjs
+node scripts/test-check-local-setup.mjs
 ```
 
 ## Installation
@@ -119,6 +120,12 @@ source = "/path/to/local/marketplace/root"
 ```
 
 marketplace root には、この repository を `plugins/cx-orchestrator` として配置します。環境側の Codex plugin configuration が別の構成を許容している場合は、その設定に従ってください。
+
+local marketplace configuration を変更せずに診断するには、次を実行します。
+
+```sh
+node scripts/check-local-setup.mjs
+```
 
 ## Known Limitations
 
