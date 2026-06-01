@@ -23,6 +23,10 @@ Use English for public project artifacts:
 
 Japanese translations may be added as separate files, such as `README.ja.md`.
 
+## Changelog
+
+For changelog entries, prefer user-facing product, setup, compatibility, and migration changes. Keep maintainer-only workflow changes in commits, pull requests, or contributor docs unless they affect users.
+
 ## Branches and Commits
 
 Maintain `main` as the publishable branch. Use short English topic branches for normal work:
