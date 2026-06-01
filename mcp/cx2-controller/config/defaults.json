@@ -1,0 +1,11 @@
+{
+  "pluginVersion": "0.1.5",
+  "allowedCodexBinary": "/opt/homebrew/bin/codex",
+  "defaultLogRoot": "~/.codex/cx-orchestrator/tasks",
+  "defaultSandbox": "workspace-write",
+  "defaultModel": null,
+  "defaultReasoningEffort": null,
+  "approvalPolicy": "on-request",
+  "commitPolicy": "deny-unless-explicit",
+  "appServer": false
+}

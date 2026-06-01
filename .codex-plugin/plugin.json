@@ -1,0 +1,37 @@
+{
+  "name": "cx-orchestrator",
+  "version": "0.1.5",
+  "description": "Orchestrate a CX1 CodexApp thread with a controlled CX2 CodexCLI worker through MCP.",
+  "author": {
+    "name": "ymt23",
+    "email": "",
+    "url": "https://github.com/ymt23"
+  },
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "mcp",
+    "orchestration",
+    "cx1",
+    "cx2"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "CX Orchestrator",
+    "shortDescription": "Run CX2 CodexCLI tasks from a CX1 CodexApp thread.",
+    "longDescription": "Provides a CX1 orchestration skill and a CX2 Controller MCP server that starts, monitors, stops, and records CodexCLI CX2 tasks with full logs.",
+    "developerName": "ymt23",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Start as CX1 for this repo using CX Orchestrator. Decide and show the CX2 runtime before each CX2 task.",
+      "Prepare a CX2 task prompt for my review, including model, reasoning effort, and speed.",
+      "Check the latest CX2 task result."
+    ],
+    "brandColor": "#2563EB"
+  }
+}

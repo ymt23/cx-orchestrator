@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local/cx-orchestrator/task.schema.json",
+  "type": "object",
+  "required": [
+    "task_id",
+    "repo_path",
+    "status",
+    "limits"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "repo_path": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft_prompt",
+        "approved_to_send",
+        "running",
+        "pending_cx1_approval",
+        "completed",
+        "blocked_needs_cx1",
+        "blocked_needs_human",
+        "failed_tooling",
+        "stopped_by_cx1"
+      ]
+    },
+    "limits": {
+      "type": "object",
+      "required": [
+        "max_runtime_minutes",
+        "max_retries"
+      ],
+      "properties": {
+        "max_runtime_minutes": {
+          "type": "number",
+          "minimum": 1
+        },
+        "max_retries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sandbox": {
+          "type": "string",
+          "enum": [
+            "read-only",
+            "workspace-write",
+            "danger-full-access"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "runtime_settings": {
+      "type": "object",
+      "properties": {
+        "model": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reasoning_effort": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            null
+          ]
+        },
+        "speed_tier": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "fast"
+          ]
+        },
+        "service_tier": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "fast",
+            null
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

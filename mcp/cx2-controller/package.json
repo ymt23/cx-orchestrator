@@ -1,0 +1,28 @@
+{
+  "name": "@local/cx2-controller-mcp",
+  "version": "0.1.5",
+  "description": "MCP controller for running Human-approved CodexCLI CX2 tasks from CX Orchestrator.",
+  "license": "MIT",
+  "author": {
+    "name": "ymt23",
+    "url": "https://github.com/ymt23"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ymt23/cx-orchestrator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ymt23/cx-orchestrator/issues"
+  },
+  "homepage": "https://github.com/ymt23/cx-orchestrator#readme",
+  "type": "module",
+  "bin": {
+    "cx2-controller-mcp": "./src/server.mjs"
+  },
+  "scripts": {
+    "check": "node --check src/server.mjs",
+    "smoke": "node test/smoke.mjs",
+    "test:wait": "node test/wait.mjs",
+    "test:model-settings": "node test/model-settings.mjs"
+  }
+}

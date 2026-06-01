@@ -1,0 +1,16 @@
+# Runtime logs and local task artifacts
+.codex/cx-orchestrator/tasks/
+tasks/
+*.log
+
+# Node/package manager output
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS/editor noise
+.DS_Store
+.idea/
+.vscode/

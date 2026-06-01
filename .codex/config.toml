@@ -1,0 +1,6 @@
+[mcp_servers.cx2_controller]
+args = ["./mcp/cx2-controller/src/server.mjs"]
+command = "node"
+
+[mcp_servers.cx2_controller.env]
+CX_ORCHESTRATOR_DEFAULTS = "./mcp/cx2-controller/config/defaults.json"

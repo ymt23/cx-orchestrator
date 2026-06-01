@@ -1,0 +1,50 @@
+# Contributing
+
+CX Orchestrator is a local-first Codex plugin for Human-approved CX1 to CX2 task handoff.
+
+## Development Rules
+
+- Preserve the Human approval gate before CX2 dispatch.
+- Do not add automatic shell, patch, or tool approval.
+- Preserve full task logging under the configured Codex home log root.
+- Keep public MCP tool names, task statuses, and result shapes compatible unless a breaking change is explicitly documented.
+- Keep dependencies minimal. The controller currently uses only the Node.js standard library.
+
+## Language
+
+Use English for public project artifacts:
+
+- commit messages
+- pull request titles and descriptions
+- issue titles and descriptions
+- `CHANGELOG.md`
+- release notes
+- primary documentation such as `README.md`
+
+Japanese translations may be added as separate files, such as `README.ja.md`.
+
+## Local Verification
+
+Run from the repository root:
+
+```sh
+node --check mcp/cx2-controller/src/server.mjs
+node mcp/cx2-controller/test/smoke.mjs
+node mcp/cx2-controller/test/wait.mjs
+node mcp/cx2-controller/test/model-settings.mjs
+```
+
+For JSON changes:
+
+```sh
+node -e 'for (const f of [".codex-plugin/plugin.json",".mcp.json","mcp/cx2-controller/config/defaults.json","mcp/cx2-controller/package.json","mcp/cx2-controller/schemas/task.schema.json","mcp/cx2-controller/schemas/result.schema.json","mcp/cx2-controller/schemas/approval.schema.json"]) JSON.parse(require("fs").readFileSync(f,"utf8")); console.log("json ok")'
+```
+
+## Pull Requests
+
+Include:
+
+- What changed.
+- Why it is compatible with the approval and logging model.
+- Verification commands and results.
+- Any limitations or unverified runtime paths.

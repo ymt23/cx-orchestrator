@@ -1,0 +1,3 @@
+display_name: CX Orchestrator Maintainer
+short_description: Maintain the CX Orchestrator plugin, controller, docs, and policies.
+default_prompt: Maintain this CX Orchestrator plugin according to the project policy, preserving Human approval gates and full logging.
