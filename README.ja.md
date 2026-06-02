@@ -39,6 +39,22 @@ CX Orchestrator は現在、local-first の Codex plugin です。CodexApp の C
 - CX1 は CX2 の status change を待ち、approval request の処理、task stop、結果 review を行います。
 - full task log は Codex home directory 配下に保存されます。
 
+## なぜ存在するか
+
+[docs/codexapp-differentiation.md](docs/codexapp-differentiation.md) の comparison snapshot 時点では、CodexApp は standard thread management、background thread、worktree support、automations、Git tools、App Server thread lifecycle APIs を既に提供しています。CX Orchestrator は、これらの公式機能を置き換えるためのものではありません。
+
+| 領域 | CodexApp standard surface | CX Orchestrator governance layer |
+| --- | --- | --- |
+| thread / worktree / automation lifecycle | 公式 CodexApp surface が担います。 | それらを置き換えません。 |
+| delegation boundary | thread が user と直接作業できます。 | CX1 は Human-facing のまま、CX2 には scope された delegated work だけを渡します。 |
+| prompt approval | exact-prompt pre-dispatch contract としては文書化されていません。 | CX2 は Human が承認した exact prompt text からのみ開始されます。 |
+| runtime visibility | standard flow で model / reasoning を選択できます。 | CX1 が CX2 task ごとに model / reasoning effort / speed を表示し、固定します。 |
+| approval handling | standard approval は user または auto-reviewer に向かいます。 | CX2 approval request は CX1/Human に戻されます。 |
+| audit trail | standard thread / event surface が適用されます。 | full task log を `~/.codex/cx-orchestrator/tasks/` に保存します。 |
+| final report | worker thread が直接報告できます。 | CX1 が CX2 output を review してから Human-facing gate decision を報告します。 |
+
+CodexApp thread、automation、worktree、App Server との詳細な比較は [docs/codexapp-differentiation.md](docs/codexapp-differentiation.md) を参照してください。
+
 ## Safety Model
 
 - CX2 は Human が exact prompt を承認した後にのみ開始されます。
@@ -148,13 +164,9 @@ node scripts/check-local-setup.mjs
 以下は将来的な方向性の候補であり、release promise ではありません。
 
 - release 後の作業は [docs/roadmap.md](docs/roadmap.md) と GitHub Issues で追跡する。
-- local marketplace configuration の安全な install check または setup script を追加する。
-- approval request handling と failure recovery の test を増やす。
-- `max_retries` 用の明示的な retry loop を実装する。
-- task list filtering と task summary inspection tool を追加する。
-- 明示的な compatibility check 付きで CodexCLI binary path を configurable にする。
-- issue report や maintainer handoff 用の sanitized log export を追加する。
-- host environment に確認済みの仕組みが提供された場合のみ、callback-based CX1 wake/resume を再検討する。
+- governance / audit work を優先する: approval handling tests、sanitized log export、task summary/filtering、retry safety、compatibility checks。
+- generic thread creation、existing-thread continuation、worktree isolation、automations は standard CodexApp surfaces に任せる。
+- App Server integration は `0.1.x` runtime change ではなく、別途 design decision として扱う。
 
 ## Versioning
 

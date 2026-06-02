@@ -9,6 +9,7 @@ This directory is the project-local knowledge base for maintaining and operating
 - [cx1-policy.md](cx1-policy.md): CX1 behavior, approval gate, Human interaction policy.
 - [cx2-controller.md](cx2-controller.md): MCP tools, statuses, logs, config, validation.
 - [roadmap.md](roadmap.md): post-release backlog candidates and issue drafts.
+- [codexapp-differentiation.md](codexapp-differentiation.md): comparison with standard CodexApp thread, automation, worktree, and App Server capabilities.
 
 ## Project-Level Files
 
