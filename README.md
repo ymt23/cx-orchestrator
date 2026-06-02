@@ -39,6 +39,22 @@ CX Orchestrator is currently a local-first Codex plugin. It is intended for main
 - CX1 waits for CX2 status changes, handles approval requests, stops tasks when needed, and reviews results.
 - Full task logs are kept under the Codex home directory.
 
+## Why This Exists
+
+As of the comparison snapshot documented in [docs/codexapp-differentiation.md](docs/codexapp-differentiation.md), CodexApp already provides standard thread management, background threads, worktree support, automations, Git tools, and App Server thread lifecycle APIs. CX Orchestrator is not intended to replace those official capabilities.
+
+| Area | CodexApp standard surface | CX Orchestrator governance layer |
+| --- | --- | --- |
+| Thread, worktree, and automation lifecycle | Official CodexApp surfaces own these workflows. | Does not replace them. |
+| Delegation boundary | A thread can work directly with the user. | CX1 stays Human-facing; CX2 only receives scoped delegated work. |
+| Prompt approval | Not documented as an exact-prompt pre-dispatch contract. | CX2 starts only from exact prompt text approved by the Human. |
+| Runtime visibility | Model and reasoning can be selected in standard flows. | CX1 displays and fixes model, reasoning effort, and speed per CX2 task. |
+| Approval handling | Standard approvals route to the user or auto-reviewer. | CX2 approval requests return to CX1/Human. |
+| Audit trail | Standard thread and event surfaces apply. | Full task logs are kept under `~/.codex/cx-orchestrator/tasks/`. |
+| Final report | A worker thread can report directly. | CX1 reviews CX2 output before reporting a Human-facing gate decision. |
+
+For the detailed comparison with CodexApp threads, automations, worktrees, and App Server, see [docs/codexapp-differentiation.md](docs/codexapp-differentiation.md).
+
 ## Safety Model
 
 - CX2 starts only after Human approval of the exact prompt.
@@ -148,13 +164,9 @@ node scripts/check-local-setup.mjs
 These are possible future directions, not committed release promises.
 
 - Track post-release work in [docs/roadmap.md](docs/roadmap.md) and GitHub Issues.
-- Add a safer installation check or setup script for local marketplace configuration.
-- Add more tests around approval request handling and failure recovery.
-- Implement a documented retry loop for `max_retries`.
-- Add task list filtering and summarized task inspection tools.
-- Support configurable CodexCLI binary paths with explicit compatibility checks.
-- Add sanitized log export for issue reports and maintainer handoffs.
-- Revisit callback-based CX1 wake/resume only if the host environment provides a confirmed mechanism.
+- Prioritize governance and audit work: approval handling tests, sanitized log export, task summary/filtering, retry safety, and compatibility checks.
+- Keep generic thread creation, existing-thread continuation, worktree isolation, and automations on the standard CodexApp surfaces.
+- Treat App Server integration as a separate design decision, not a `0.1.x` runtime change.
 
 ## Versioning
 
